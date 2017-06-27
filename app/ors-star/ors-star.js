@@ -9,6 +9,8 @@
 			controller: function OrsStarCtrl($element){
 				'ngInject';
 				console.log('OrsStarCtrl', arguments);
+				let html = 'toto';
+				$element.html(html);
 			}
 		};
 	});
