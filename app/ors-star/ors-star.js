@@ -9,9 +9,13 @@
 			scope: {
 				note: '=?'
 			},
-			controller: function OrsStarCtrl($scope, $element) {
+			controller: function OrsStarCtrl($scope, $element, $compile) {
 				'ngInject';
 				console.log('OrsStarCtrl', arguments);
+				$scope.update = function update(newNote) {
+					console.log('newNote', newNote);
+					$scope.note = newNote;
+				};
 				$scope.$watch('note', function () {
 					let note = $scope.note || 3;
 					note = (note > 5) ? 5 : note;
@@ -27,6 +31,7 @@ ng-click="update(${i + 1})"
 src="./ors-star/img/white_star.png">`;
 					}
 					$element.html(html);
+					$compile($element.contents())($scope);
 				});
 
 			}
