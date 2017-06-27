@@ -6,7 +6,8 @@
 	app.directive('orsStar', function () {
 		return {
 			restrict: 'E',
-			controller: function OrsStarCtrl(){
+			controller: function OrsStarCtrl($element){
+				'ngInject';
 				console.log('OrsStarCtrl', arguments);
 			}
 		};
