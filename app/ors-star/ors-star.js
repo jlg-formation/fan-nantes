@@ -17,6 +17,7 @@
 					$scope.note = newNote;
 				};
 				$scope.$watch('note', function () {
+					console.log('test à chaud');
 					let note = $scope.note || 3;
 					note = (note > 5) ? 5 : note;
 					note = (note < 0) ? 0 : note;
